@@ -209,8 +209,6 @@ export default {
             this.editVisible = false;
             this.$message.success(`修改第 ${this.idx + 1} 行成功`);
             this.$set(this.tableData, this.idx, this.form);
-            this.$set(this.tableData2, this.idx, this.form);
-            this.$set(this.tablevisible, this.idx, this.form);
         },
     },
     created(){
