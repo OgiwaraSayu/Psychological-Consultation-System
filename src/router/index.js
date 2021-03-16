@@ -18,31 +18,31 @@ export default new Router({
                 {
                     path: '/scheduletime',
                     component: () => import('../components/componentsofadmin/counselormanage/counselorlist/ScheduleTime'),
-                    meta: {title: '预约时间表',permission: 'admin'}
+                    meta: { title: '预约时间表', permission: 'admin' }
                 },
                 //咨询师管理
                 {
                     path: '/consultantmanage',
                     component: () => import('../components/componentsofadmin/counselormanage/CouselorManage'),
-                    meta: {title: '咨询师管理',permission: 'admin'}
+                    meta: { title: '咨询师管理', permission: 'admin' }
                 },
                 //高级设置
                 {
-                    path:'/advancedsettings',
+                    path: '/advancedsettings',
                     component: () => import('../components/componentsofadmin/AdvancedSettings'),
-                    meta: {title: '高级设置',permission: 'admin'}
+                    meta: { title: '高级设置', permission: 'admin' }
                 },
                 //初访预约管理
                 {
-                  path:'/firstvisitmanage',
-                  component: () => import('../components/componentsofadmin/reservemanage/FirstVisitManage'),
-                  meta: {title: '初访预约管理',permission: 'admin'}
+                    path: '/firstvisitmanage',
+                    component: () => import('../components/componentsofadmin/reservemanage/FirstVisitManage'),
+                    meta: { title: '初访预约管理', permission: 'admin' }
                 },
                 //预约成功列表
                 {
-                    path:'/reservesucess',
+                    path: '/reservesucess',
                     component: () => import('../components/componentsofadmin/reservemanage/ReserveSucess'),
-                    meta: {title: '预约成功',permission: 'admin'}
+                    meta: { title: '预约成功', permission: 'admin' }
                 },
 
 
@@ -51,19 +51,19 @@ export default new Router({
                 {
                     path: '/firstvisitlist',
                     component: () => import('../components/componentsofvisitor/firstvisitmanage/FirstVisitList'),
-                    meta: {title: '录入初访信息',permission: 'visitor' }
+                    meta: { title: '录入初访信息', permission: 'visitor' }
                 },
                 //录入初访信息
                 {
                     path: '/recordfirstvisit',
                     component: () => import('../components/componentsofvisitor/firstvisitmanage/RecordFisrtVisit'),
-                    meta: {title: '录入初访信息',permission: 'visitor'}
+                    meta: { title: '录入初访信息', permission: 'visitor' }
                 },
                 //查看初访结果
                 {
                     path: '/firstvisitresult',
                     component: () => import('../components/componentsofvisitor/firstvisitmanage/FirstVisitResult'),
-                    meta: {title: '录入初访信息',permission: 'visitor,assistant'}
+                    meta: { title: '录入初访信息', permission: 'visitor,assistant' }
                 },
 
                 //学生
@@ -71,40 +71,40 @@ export default new Router({
                 {
                     path: '/firstvisitquestiontable',
                     component: () => import('../components/componentsofstudents/firstvisitreserve/FirstVisitQuestionTable'),
-                    meta: {title: '登记表',permission: 'student'}
+                    meta: { title: '登记表', permission: 'student' }
                 },
                 //预约须知
                 {
                     path: '/reserveinformation',
                     component: () => import('../components/componentsofstudents/firstvisitreserve/ReserveInformation'),
-                    meta: {title: '预约须知',permission: 'student'}
+                    meta: { title: '预约须知', permission: 'student' }
                 },
                 //我的咨询师
                 {
                     path: '/mycounselor',
                     component: () => import('../components/componentsofstudents/MyCounselor'),
-                    meta: {title: '我的咨询师',permission: 'student'}
+                    meta: { title: '我的咨询师', permission: 'student' }
                 },
                 //我的预约
                 {
                     path: '/myreservation',
                     component: () => import('../components/componentsofstudents/MyReservation'),
-                    meta: {title: '选择时间段',permission: 'student'}
+                    meta: { title: '选择时间段', permission: 'student' }
                 },
 
 
                 //咨询师
                 //编辑咨询记录
                 {
-                    path: '/editrecord' ,
+                    path: '/editrecord',
                     component: () => import('../components/componentsofcounselors/counselmanage/EditRecord'),
-                    meta: {title: '学生详情',permission: 'counselor'}
+                    meta: { title: '学生详情', permission: 'counselor' }
                 },
                 //编辑咨询记录
                 {
-                    path: '/editrecorddetails' ,
+                    path: '/editrecorddetails',
                     component: () => import('../components/componentsofcounselors/counselmanage/EditRecordDetails'),
-                    meta: {title: '编辑咨询记录',permission: 'counselor'}
+                    meta: { title: '编辑咨询记录', permission: 'counselor' }
                 },
 
 
@@ -125,10 +125,10 @@ export default new Router({
                     meta: { title: '403' }
                 },
                 {
-                    path:'/person',
+                    path: '/person',
                     component: () => import('../components/componentsofallusers/Person'),
-                    meta: { title:  '个人资料'}
-                },
+                    meta: { title: '个人资料' }
+                }
             ]
         },
         {
@@ -138,21 +138,21 @@ export default new Router({
         },
         //首页
         {
-            path:'/homepage',
+            path: '/homepage',
             component: () => import('../view/pages/Main'),
-            meta: { title: '首页'}
+            meta: { title: '首页' }
         },
         //问卷
         {
-            path:'/questionnaire',
+            path: '/questionnaire',
             component: () => import('../view/pages/Questionnaire'),
-            meta: { title: '问卷'}
+            meta: { title: '问卷' }
         },
         //专家页面
         {
-            path:'/professorpage',
+            path: '/professorpage',
             component: () => import('../view/pages/ProfessorPage'),
-            meta: { title: '专家'}
+            meta: { title: '专家' }
         },
         {
             path: '*',

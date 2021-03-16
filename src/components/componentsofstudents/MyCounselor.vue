@@ -4,6 +4,7 @@
 
 <script>
 import ProfessorPage from '@/view/pages/ProfessorPage';
+
 export default {
     name: 'MyCounselor',
     components: { ProfessorPage },

@@ -1,7 +1,7 @@
 <template>
-<div>
-    <p>设置间隔时间</p>
-</div>
+    <div>
+        <p>设置间隔时间</p>
+    </div>
 </template>
 
 <script>

@@ -1,17 +1,17 @@
 <template>
     <div class="sidebar">
         <el-menu
-            class="sidebar-el-menu"
-            :default-active="onRoutes"
             :collapse="collapse"
-            background-color="#324157"
-            text-color="#bfcbd9"
+            :default-active="onRoutes"
             active-text-color="#9a0ff"
-            unique-opened
+            background-color="#324157"
+            class="sidebar-el-menu"
             router
+            text-color="#bfcbd9"
+            unique-opened
         >
             <div style="height: 80px;">
-                <el-button type="primary" style="position:relative;top: 10%;height: 70px;left: 8%;width: 80%;">
+                <el-button style="position:relative;top: 10%;height: 70px;left: 8%;width: 80%;" type="primary">
                 <span style="color: white;font-size: 25px;">
                     <i class="el-icon-setting"></i>
                     <span v-if="!collapse">后台管理系统</span>
@@ -19,9 +19,9 @@
                 </el-button>
             </div>
             <i class="el-icon-setting"></i>
-            <template v-for="i in public" >
+            <template v-for="i in public">
                 <template>
-                    <el-menu-item :index="i.index" :key="i.index">
+                    <el-menu-item :key="i.index" :index="i.index">
                         <i :class="i.icon"></i>
                         <span slot="title">{{ i.title }}</span>
                     </el-menu-item>
@@ -29,7 +29,7 @@
             </template>
             <template v-for="item in items" v-if="username==='admin'">
                 <template v-if="item.subs">
-                    <el-submenu :index="item.index" :key="item.index">
+                    <el-submenu :key="item.index" :index="item.index">
                         <template slot="title">
                             <i :class="item.icon"></i>
                             <span slot="title">{{ item.title }}</span>
@@ -37,26 +37,28 @@
                         <template v-for="subItem in item.subs">
                             <el-submenu
                                 v-if="subItem.subs"
-                                :index="subItem.index"
                                 :key="subItem.index"
+                                :index="subItem.index"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
                                     v-for="(threeItem,i) in subItem.subs"
                                     :key="i"
                                     :index="threeItem.index"
-                                >{{ threeItem.title }}</el-menu-item>
+                                >{{ threeItem.title }}
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item
                                 v-else
-                                :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                                :index="subItem.index"
+                            >{{ subItem.title }}
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
                 <template v-else>
-                    <el-menu-item :index="item.index" :key="item.index">
+                    <el-menu-item :key="item.index" :index="item.index">
                         <i :class="item.icon"></i>
                         <span slot="title">{{ item.title }}</span>
                     </el-menu-item>
@@ -65,7 +67,7 @@
 
             <template v-for="item in items2" v-if="username==='visitor'">
                 <template v-if="item.subs">
-                    <el-submenu :index="item.index" :key="item.index">
+                    <el-submenu :key="item.index" :index="item.index">
                         <template slot="title">
                             <i :class="item.icon"></i>
                             <span slot="title">{{ item.title }}</span>
@@ -73,26 +75,28 @@
                         <template v-for="subItem in item.subs">
                             <el-submenu
                                 v-if="subItem.subs"
-                                :index="subItem.index"
                                 :key="subItem.index"
+                                :index="subItem.index"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
                                     v-for="(threeItem,i) in subItem.subs"
                                     :key="i"
                                     :index="threeItem.index"
-                                >{{ threeItem.title }}</el-menu-item>
+                                >{{ threeItem.title }}
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item
                                 v-else
-                                :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                                :index="subItem.index"
+                            >{{ subItem.title }}
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
                 <template v-else>
-                    <el-menu-item :index="item.index" :key="item.index">
+                    <el-menu-item :key="item.index" :index="item.index">
                         <i :class="item.icon"></i>
                         <span slot="title">{{ item.title }}</span>
                     </el-menu-item>
@@ -101,7 +105,7 @@
 
             <template v-for="item in items3" v-if="username==='assistant'">
                 <template v-if="item.subs">
-                    <el-submenu :index="item.index" :key="item.index">
+                    <el-submenu :key="item.index" :index="item.index">
                         <template slot="title">
                             <i :class="item.icon"></i>
                             <span slot="title">{{ item.title }}</span>
@@ -109,26 +113,28 @@
                         <template v-for="subItem in item.subs">
                             <el-submenu
                                 v-if="subItem.subs"
-                                :index="subItem.index"
                                 :key="subItem.index"
+                                :index="subItem.index"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
                                     v-for="(threeItem,i) in subItem.subs"
                                     :key="i"
                                     :index="threeItem.index"
-                                >{{ threeItem.title }}</el-menu-item>
+                                >{{ threeItem.title }}
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item
                                 v-else
-                                :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                                :index="subItem.index"
+                            >{{ subItem.title }}
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
                 <template v-else>
-                    <el-menu-item :index="item.index" :key="item.index">
+                    <el-menu-item :key="item.index" :index="item.index">
                         <i :class="item.icon"></i>
                         <span slot="title">{{ item.title }}</span>
                     </el-menu-item>
@@ -137,7 +143,7 @@
 
             <template v-for="item in items4" v-if="username==='student'">
                 <template v-if="item.subs">
-                    <el-submenu :index="item.index" :key="item.index">
+                    <el-submenu :key="item.index" :index="item.index">
                         <template slot="title">
                             <i :class="item.icon"></i>
                             <span slot="title">{{ item.title }}</span>
@@ -145,26 +151,28 @@
                         <template v-for="subItem in item.subs">
                             <el-submenu
                                 v-if="subItem.subs"
-                                :index="subItem.index"
                                 :key="subItem.index"
+                                :index="subItem.index"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
                                     v-for="(threeItem,i) in subItem.subs"
                                     :key="i"
                                     :index="threeItem.index"
-                                >{{ threeItem.title }}</el-menu-item>
+                                >{{ threeItem.title }}
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item
                                 v-else
-                                :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                                :index="subItem.index"
+                            >{{ subItem.title }}
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
                 <template v-else>
-                    <el-menu-item :index="item.index" :key="item.index">
+                    <el-menu-item :key="item.index" :index="item.index">
                         <i :class="item.icon"></i>
                         <span slot="title">{{ item.title }}</span>
                     </el-menu-item>
@@ -173,7 +181,7 @@
 
             <template v-for="item in items5" v-if="username==='counselor'">
                 <template v-if="item.subs">
-                    <el-submenu :index="item.index" :key="item.index">
+                    <el-submenu :key="item.index" :index="item.index">
                         <template slot="title">
                             <i :class="item.icon"></i>
                             <span slot="title">{{ item.title }}</span>
@@ -181,69 +189,72 @@
                         <template v-for="subItem in item.subs">
                             <el-submenu
                                 v-if="subItem.subs"
-                                :index="subItem.index"
                                 :key="subItem.index"
+                                :index="subItem.index"
                             >
                                 <template slot="title">{{ subItem.title }}</template>
                                 <el-menu-item
                                     v-for="(threeItem,i) in subItem.subs"
                                     :key="i"
                                     :index="threeItem.index"
-                                >{{ threeItem.title }}</el-menu-item>
+                                >{{ threeItem.title }}
+                                </el-menu-item>
                             </el-submenu>
                             <el-menu-item
                                 v-else
-                                :index="subItem.index"
                                 :key="subItem.index"
-                            >{{ subItem.title }}</el-menu-item>
+                                :index="subItem.index"
+                            >{{ subItem.title }}
+                            </el-menu-item>
                         </template>
                     </el-submenu>
                 </template>
                 <template v-else>
-                    <el-menu-item :index="item.index" :key="item.index">
+                    <el-menu-item :key="item.index" :index="item.index">
                         <i :class="item.icon"></i>
                         <span slot="title">{{ item.title }}</span>
                     </el-menu-item>
                 </template>
             </template>
-<!--            <template v-for="i in items2" v-if="username==='chufang'">-->
-<!--                <template>-->
-<!--                    <el-menu-item :index="i.index" :key="i.index">-->
-<!--                        <i :class="i.icon"></i>-->
-<!--                        <span slot="title">{{ i.title }}</span>-->
-<!--                    </el-menu-item>-->
-<!--                </template>-->
-<!--            </template>-->
-<!--            <template v-for="i in items3" v-if="username==='zhuli'">-->
-<!--                <template>-->
-<!--                    <el-menu-item :index="i.index" :key="i.index">-->
-<!--                        <i :class="i.icon"></i>-->
-<!--                        <span slot="title">{{ i.title }}</span>-->
-<!--                    </el-menu-item>-->
-<!--                </template>-->
-<!--            </template>-->
-<!--            <template v-for="i in items3" v-if="username==='xuesheng'">-->
-<!--                <template>-->
-<!--                    <el-menu-item :index="i.index" :key="i.index">-->
-<!--                        <i :class="i.icon"></i>-->
-<!--                        <span slot="title">{{ i.title }}</span>-->
-<!--                    </el-menu-item>-->
-<!--                </template>-->
-<!--            </template>-->
-<!--            <template v-for="i in items3" v-if="username==='zixun'">-->
-<!--                <template>-->
-<!--                    <el-menu-item :index="i.index" :key="i.index">-->
-<!--                        <i :class="i.icon"></i>-->
-<!--                        <span slot="title">{{ i.title }}</span>-->
-<!--                    </el-menu-item>-->
-<!--                </template>-->
-<!--            </template>-->
+            <!--            <template v-for="i in items2" v-if="username==='chufang'">-->
+            <!--                <template>-->
+            <!--                    <el-menu-item :index="i.index" :key="i.index">-->
+            <!--                        <i :class="i.icon"></i>-->
+            <!--                        <span slot="title">{{ i.title }}</span>-->
+            <!--                    </el-menu-item>-->
+            <!--                </template>-->
+            <!--            </template>-->
+            <!--            <template v-for="i in items3" v-if="username==='zhuli'">-->
+            <!--                <template>-->
+            <!--                    <el-menu-item :index="i.index" :key="i.index">-->
+            <!--                        <i :class="i.icon"></i>-->
+            <!--                        <span slot="title">{{ i.title }}</span>-->
+            <!--                    </el-menu-item>-->
+            <!--                </template>-->
+            <!--            </template>-->
+            <!--            <template v-for="i in items3" v-if="username==='xuesheng'">-->
+            <!--                <template>-->
+            <!--                    <el-menu-item :index="i.index" :key="i.index">-->
+            <!--                        <i :class="i.icon"></i>-->
+            <!--                        <span slot="title">{{ i.title }}</span>-->
+            <!--                    </el-menu-item>-->
+            <!--                </template>-->
+            <!--            </template>-->
+            <!--            <template v-for="i in items3" v-if="username==='zixun'">-->
+            <!--                <template>-->
+            <!--                    <el-menu-item :index="i.index" :key="i.index">-->
+            <!--                        <i :class="i.icon"></i>-->
+            <!--                        <span slot="title">{{ i.title }}</span>-->
+            <!--                    </el-menu-item>-->
+            <!--                </template>-->
+            <!--            </template>-->
         </el-menu>
     </div>
 </template>
 
 <script>
 import bus from '../common/bus';
+
 export default {
     data() {
         return {
@@ -264,12 +275,12 @@ export default {
                     subs: [
                         {
                             index: 'firstvisitmanage',
-                            title: '初访预约管理',
+                            title: '初访预约管理'
                         },
                         {
                             index: 'reservesucess',
                             title: '预约成功列表'
-                        },
+                        }
                     ]
                 },
                 {
@@ -279,7 +290,7 @@ export default {
                     subs: [
                         {
                             index: 'consultantmanage',
-                            title: '用户管理',
+                            title: '用户管理'
                         },
                         {
                             index: '2-2',
@@ -287,19 +298,19 @@ export default {
                             subs: [
                                 {
                                     index: 'scheduletime',
-                                    title: '配置咨询时间',
+                                    title: '配置咨询时间'
                                 }
                             ]
-                        },{
+                        }, {
                             index: '2-3',
                             title: '初访员列表',
                             subs: [
                                 {
                                     index: 'scheduletime',
-                                    title: '配置初访时间',
+                                    title: '配置初访时间'
                                 }
                             ]
-                        },
+                        }
                     ]
                 },
                 {
@@ -322,7 +333,7 @@ export default {
                 {
                     icon: 'el-icon-s-tools',
                     index: 'advancedsettings',
-                    title: '高级配置',
+                    title: '高级配置'
                 },
                 {
                     icon: 'el-icon-lx-warn',
@@ -338,7 +349,7 @@ export default {
                             title: '404页面'
                         }
                     ]
-                },
+                }
             ],
             items2: [
                 //初访员
@@ -349,31 +360,31 @@ export default {
                     subs: [
                         {
                             index: 'firstvisitlist',
-                            title: '录入初访信息',
+                            title: '录入初访信息'
                         },
                         {
                             index: 'firstvisitresult',
-                            title: '查看初访结果',
+                            title: '查看初访结果'
                         }
                     ]
-                },
+                }
             ],
             items3: [
                 //心理助理
                 {
                     icon: 'el-icon-folder',
                     index: '6',
-                    title: '咨询安排',
+                    title: '咨询安排'
                 },
                 {
                     icon: 'el-icon-folder',
                     index: '7',
-                    title: '预约时间表',
+                    title: '预约时间表'
                 },
                 {
                     icon: 'el-icon-folder',
                     index: 'firstvisitresult',
-                    title: '查看初访结果',
+                    title: '查看初访结果'
                 }
             ],
             items4: [
@@ -390,7 +401,7 @@ export default {
                         {
                             index: 'firstvisitquestiontable',
                             title: '初访预约-首访登记表'
-                        },
+                        }
                     ]
                 },
                 {
@@ -402,7 +413,7 @@ export default {
                     icon: 'el-icon-s-custom',
                     index: 'mycounselor',
                     title: '我的咨询师'  //学生查看自己的咨询师
-                },
+                }
             ],
             items5: [
                 //咨询师
@@ -430,12 +441,12 @@ export default {
                                 {
                                     index: '9-1-2',
                                     title: '咨询结案报告'
-                                },
+                                }
                             ]
-                        },
+                        }
 
                     ]
-                },
+                }
             ]
         };
     },
@@ -464,12 +475,15 @@ export default {
     bottom: 0;
     overflow-y: scroll;
 }
+
 .sidebar::-webkit-scrollbar {
     width: 0;
 }
+
 .sidebar-el-menu:not(.el-menu--collapse) {
     width: 250px;
 }
+
 .sidebar > ul {
     height: 100%;
 }

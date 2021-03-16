@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from '../src/router'
+import router from '../src/router';
 import ElementUI from 'element-ui';
 import VueI18n from 'vue-i18n';
 import VueCookie from 'vue-cookie';
@@ -12,7 +12,7 @@ import './components/common/directives';
 import 'babel-polyfill';
 
 Vue.config.productionTip = false;
-Vue.use(VueCookie)
+Vue.use(VueCookie);
 Vue.use(VueI18n);
 Vue.use(router);
 Vue.use(VueAMap);
@@ -25,7 +25,7 @@ Vue.use(ElementUI, {
 router.beforeEach((to, from, next) => {
     document.title = `${to.meta.title} | vue-manage-system`;
     const role = localStorage.getItem('ms_username');
-    if (!role && ((to.path !== '/login')&&(to.path !== '/homepage'))) {
+    if (!role && ((to.path !== '/login') && (to.path !== '/homepage'))) {
         next('/login');
     } else if (to.meta.permission != null) {
         // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已
@@ -54,5 +54,5 @@ VueAMap.initAMapApiLoader({
 
 new Vue({
     router,
-    render: h => h(App),
-}).$mount('#app')
+    render: h => h(App)
+}).$mount('#app');

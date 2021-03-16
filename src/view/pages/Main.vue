@@ -1,14 +1,14 @@
 <template>
-    <div>
-        <div class="login-div" v-if="loginvisible">
+    <div style="overflow-x: hidden">
+        <div v-if="loginvisible" class="login-div">
             <el-link href="/login">登陆</el-link>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <el-link>注册</el-link>
         </div>
-        <div class="login-div" v-if="!loginvisible">
-            <el-link href="/person">{{uname}}</el-link>
+        <div v-if="!loginvisible" class="login-div">
+            <el-link href="/person">{{ uname }}</el-link>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <el-link @click="test">退出</el-link>
+            <el-link @click="logout">退出</el-link>
         </div>
         <div class="block">
             <div>
@@ -51,7 +51,8 @@
                                         <div style="margin-top: 5px">
                                             <i class="el-icon-video-play" style="color: #A7C86B"></i>
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <span class="span1"><a style="color:#A7C86B;font-weight: bold;font-size: large">在线地图</a></span>
+                                            <span class="span1"><a
+                                                style="color:#A7C86B;font-weight: bold;font-size: large">在线地图</a></span>
                                         </div>
                                         <div :style="{width:'100%',height:'300px'}">
                                             <el-amap :center="center" :plugin="plugin" class="amap-demo" vid="amap">
@@ -79,7 +80,8 @@
                             <el-card body-style="padding: 0px" class="box-card" shadow="never"
                                      style="margin-left: 10px;margin-right: 10px;height: 320px">
                                 <div class="linear">
-                                    <i class="el-icon-video-play" style="color: #A7C86B;margin-top: 10px;margin-left: 10px"></i>
+                                    <i class="el-icon-video-play"
+                                       style="color: #A7C86B;margin-top: 10px;margin-left: 10px"></i>
                                 </div>
                                 <span style="color: rgba(42,136,238,0.55)">觉察自我 舒展心灵 启迪智慧 重获幸福。我们的电话：</span>
                                 <span style="color: orange;font-weight: bold;font-family: 微軟正黑體;font-size: large">028-85374385</span>
@@ -103,7 +105,8 @@
                                      style="margin-left: 10px;margin-right: 10px">
                                 <div>
                                     <div class="linear">
-                                        <i class="el-icon-video-play" style="color: #A7C86B;margin-top: 10px;margin-left: 10px">
+                                        <i class="el-icon-video-play"
+                                           style="color: #A7C86B;margin-top: 10px;margin-left: 10px">
                                             &nbsp;&nbsp;&nbsp;&nbsp;
                                             <span style="font-size: large;font-weight: bold">中心介绍</span>
                                         </i>
@@ -115,14 +118,16 @@
               </span>
                                     </div>
                                     <div style="float: left;width: 55%">
-                                        <img src="../../assets/about.jpg" style="width: 90%;height: 150px;margin-left: 25px">
+                                        <img src="../../assets/about.jpg"
+                                             style="width: 90%;height: 150px;margin-left: 25px">
                                     </div>
                                 </div>
                                 <div style="margin-top: 160px ">
                                     <hr color="#A7C86B">
                                 </div>
                                 <div>
-                                    <i class="el-icon-video-play" style="color: #A7C86B;margin-top: 10px;margin-left: 10px">
+                                    <i class="el-icon-video-play"
+                                       style="color: #A7C86B;margin-top: 10px;margin-left: 10px">
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <span style="font-size: large;font-weight: bold">专家团队</span>
                                     </i>
@@ -131,24 +136,30 @@
                                     <el-row class="autoplay">
                                         <ul>
 
-                                            <li v-for="item in imageProfessorBox1" :key="item.id" :style="{'left': leftDistance1+'px'}"
+                                            <li v-for="item in imageProfessorBox1" :key="item.id"
+                                                :style="{'left': leftDistance1+'px'}"
                                                 style="overflow: hidden;float: left;position: relative">
-                                                <router-link :to="{path: '/professorpage',query: {professorname:item.professorname}}">
-                                                    <el-card class="box-card" shadow="never" style="padding: 0px;margin-right: 20px">
+                                                <router-link
+                                                    :to="{path: '/professorpage',query: {professorname:item.professorname}}">
+                                                    <el-card class="box-card" shadow="never"
+                                                             style="padding: 0px;margin-right: 20px">
                                                         <img :src="item.idView" class="img2">
                                                     </el-card>
-                                                    <span class="professor">{{item.professorname}}</span>
+                                                    <span class="professor">{{ item.professorname }}</span>
                                                 </router-link>
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li v-for="item in imageProfessorBox2" :key="item.id" :style="{'left': leftDistance2+'px'}"
+                                            <li v-for="item in imageProfessorBox2" :key="item.id"
+                                                :style="{'left': leftDistance2+'px'}"
                                                 style="overflow: hidden;float: left;position: relative">
-                                                <router-link :to="{path: '/professorpage',query: {professorname:item.professorname}}">
-                                                    <el-card class="box-card" shadow="never" style="padding: 0px;margin-right: 20px">
+                                                <router-link
+                                                    :to="{path: '/professorpage',query: {professorname:item.professorname}}">
+                                                    <el-card class="box-card" shadow="never"
+                                                             style="padding: 0px;margin-right: 20px">
                                                         <img :src="item.idView" class="img2">
                                                     </el-card>
-                                                    <span class="professor">{{item.professorname}}</span>
+                                                    <span class="professor">{{ item.professorname }}</span>
                                                 </router-link>
                                             </li>
                                         </ul>
@@ -163,8 +174,10 @@
                 <el-row>
                     <el-col :span='4'><p>&nbsp;</p></el-col>
                     <el-col :span="16" style="overflow: hidden;float: left;position: relative">
-                        <el-image :src="require('../../assets/img/bg/bg1.png')" style="margin-top: 10px;height: 780px"></el-image>
-                        <el-image :src="require('../../assets/img/bg/bg2.png')" style="margin-top: 10px;height: 650px"></el-image>
+                        <el-image :src="require('../../assets/img/bg/bg1.png')"
+                                  style="margin-top: 10px;height: 780px"></el-image>
+                        <el-image :src="require('../../assets/img/bg/bg2.png')"
+                                  style="margin-top: 10px;height: 650px"></el-image>
                         <el-row class="autoplay">
                             <ul>
                                 <li v-for="item in imageSceneBox1" :key="item.id" :style="{'left': leftDistance3+'px'}"
@@ -204,10 +217,10 @@ export default {
         return {
             loginvisible: false,
             uname: localStorage.getItem('ms_username'),
-            imagesBox: [{id: 0, idView: require("../../assets/1.jpg")},
-                {id: 1, idView: require("../../assets/2.jpg")},
-                {id: 2, idView: require("../../assets/3.jpg")},
-                {id: 3, idView: require("../../assets/4.jpg")},],
+            imagesBox: [{ id: 0, idView: require('../../assets/1.jpg') },
+                { id: 1, idView: require('../../assets/2.jpg') },
+                { id: 2, idView: require('../../assets/3.jpg') },
+                { id: 3, idView: require('../../assets/4.jpg') }],
             num1: 0,
             num2: 0,
             num3: 0,
@@ -220,29 +233,29 @@ export default {
             leftDistance5: this.num5,
             autoplaySwitch: true,
             imageProfessorBox1: [
-                {id: 1, idView: require("../../assets/img/Professor/P1.jpg"),professorname: '罗红心理专家'},
-                {id: 2, idView: require("../../assets/img/Professor/P2.png"),professorname: '蒋旭伟心理咨询师'},
-                {id: 3, idView: require("../../assets/img/Professor/P3.png"),professorname: '青松心理咨询师'},
+                { id: 1, idView: require('../../assets/img/Professor/P1.jpg'), professorname: '罗红心理专家' },
+                { id: 2, idView: require('../../assets/img/Professor/P2.png'), professorname: '蒋旭伟心理咨询师' },
+                { id: 3, idView: require('../../assets/img/Professor/P3.png'), professorname: '青松心理咨询师' }
             ],
             imageProfessorBox2: [
-                {id: 1, idView: require("../../assets/img/Professor/P4.png"),professorname: '游建国先生'},
-                {id: 2, idView: require("../../assets/img/Professor/P5.png"),professorname: '唐亚杰老师'},
-                {id: 3, idView: require("../../assets/img/Professor/P6.jpg"),professorname: '侯盛炜心理咨询师'},
-                {id: 4, idView: require("../../assets/img/Professor/P7.jpg"),professorname: '付挺心理咨询师'}
+                { id: 1, idView: require('../../assets/img/Professor/P4.png'), professorname: '游建国先生' },
+                { id: 2, idView: require('../../assets/img/Professor/P5.png'), professorname: '唐亚杰老师' },
+                { id: 3, idView: require('../../assets/img/Professor/P6.jpg'), professorname: '侯盛炜心理咨询师' },
+                { id: 4, idView: require('../../assets/img/Professor/P7.jpg'), professorname: '付挺心理咨询师' }
             ],
             imageSceneBox1: [
-                {id: 1, idView: require("../../assets/img/scene/scene1.jpg")},
-                {id: 2, idView: require("../../assets/img/scene/scene2.png")},
-                {id: 3, idView: require("../../assets/img/scene/scene3.png")},
+                { id: 1, idView: require('../../assets/img/scene/scene1.jpg') },
+                { id: 2, idView: require('../../assets/img/scene/scene2.png') },
+                { id: 3, idView: require('../../assets/img/scene/scene3.png') }
             ],
             imageSceneBox2: [
-                {id: 1, idView: require("../../assets/img/scene/scene4.png")},
-                {id: 2, idView: require("../../assets/img/scene/scene5.jpg")},
-                {id: 3, idView: require("../../assets/img/scene/scene6.png")},
+                { id: 1, idView: require('../../assets/img/scene/scene4.png') },
+                { id: 2, idView: require('../../assets/img/scene/scene5.jpg') },
+                { id: 3, idView: require('../../assets/img/scene/scene6.png') }
             ],
             imageSceneBox3: [
-                {id: 1, idView: require("../../assets/img/scene/scene8.png")},
-                {id: 2, idView: require("../../assets/img/scene/scene7.jpg")},
+                { id: 1, idView: require('../../assets/img/scene/scene8.png') },
+                { id: 2, idView: require('../../assets/img/scene/scene7.jpg') }
             ],
             center: [104.06, 30.67],
             lng: 0,
@@ -265,7 +278,7 @@ export default {
                     init(o) {
                         // o 是高德地图定位插件实例
                         o.getCurrentPosition((status, result) => {
-                            console.log(result)
+                            console.log(result);
                             if (result && result.position) {
                                 self.lng = result.position.lng;
                                 self.lat = result.position.lat;
@@ -277,7 +290,7 @@ export default {
                     }
                 }
             }]
-        }
+        };
     },
     methods: {
         autoplay() {
@@ -293,29 +306,29 @@ export default {
                 this.leftDistance4 = this.num4;
                 this.leftDistance5 = this.num5;
                 if (this.num1 === -650) {
-                    this.num1 = 835
+                    this.num1 = 835;
                 }
                 if (this.num2 === -1470) {
-                    this.num2 = 15
+                    this.num2 = 15;
                 }
                 if (this.num3 === -650) {
-                    this.num3 = 1045
+                    this.num3 = 1045;
                 }
                 if (this.num4 === -1300) {
-                    this.num4 = 395
+                    this.num4 = 395;
                 }
                 if (this.num5 === -1800) {
-                    this.num5 = -105
+                    this.num5 = -105;
                 }
             }
         },
         mouseout() {
-            this.autoplaySwitch = true
+            this.autoplaySwitch = true;
         },
         mouseon() {
-            this.autoplaySwitch = false
+            this.autoplaySwitch = false;
         },
-        test(){
+        logout() {
             localStorage.removeItem('ms_username');
             this.$router.go(0);
         }
@@ -324,14 +337,13 @@ export default {
         this.$nextTick(() => {
             setInterval(this.autoplay, 10);
         });
-        if(this.uname !== null){
+        if (this.uname !== null) {
             this.loginvisible = false;
-        }
-        else {
+        } else {
             this.loginvisible = true;
         }
-    },
-}
+    }
+};
 </script>
 
 <style scoped>
@@ -429,7 +441,7 @@ li {
 }
 
 .nav_bg {
-    background: url("../../assets/skin2.png") 0px -154px;
+    background: url("../../assets/skin2.png") 0 -154px;
     width: 697px;
     height: 131px;
     position: absolute;
@@ -456,12 +468,9 @@ li {
 
 .nav0 li a {
     display: inline-block;
-    text-align: left;
-    text-align: center;
     color: white;
     text-indent: 0.6em;
     font-size: 15px;
-    font-family: 微软雅黑;
     text-decoration: none
 }
 
@@ -470,19 +479,20 @@ li {
     text-decoration: none;
 }
 
-.professor{
+.professor {
     margin-left: 25%;
     font-size: small;
     font-weight: bold;
-    color: rgba(136,238,25,0.82);
+    color: rgba(136, 238, 25, 0.82);
 }
 
-.login-div{
+.login-div {
     position: relative;
     left: 90%;
     font-weight: bold;
 }
-.el-link{
+
+.el-link {
     font-size: large;
     color: green;
 }

@@ -1,11 +1,11 @@
 <template>
     <div class="wrapper">
         <v-sidebar></v-sidebar>
-        <div class="content-box" :class="{'content-collapse':collapse}">
+        <div :class="{'content-collapse':collapse}" class="content-box">
             <v-head></v-head>
-<!--            <v-tags></v-tags>-->
+            <!--            <v-tags></v-tags>-->
             <div class="content">
-                <transition name="move" mode="out-in">
+                <transition mode="out-in" name="move">
                     <keep-alive :include="tagsList">
                         <router-view></router-view>
                     </keep-alive>
@@ -21,11 +21,12 @@ import vHead from './Header.vue';
 import vSidebar from './Sidebar.vue';
 import vTags from './Tags.vue';
 import bus from './bus';
+
 export default {
     data() {
         return {
             tagsList: [],
-            collapse: false,
+            collapse: false
         };
     },
     components: {

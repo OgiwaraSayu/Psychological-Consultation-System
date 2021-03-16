@@ -21,7 +21,8 @@
                     <el-option key="2" label="咨询师" value="咨询师"></el-option>
                 </el-select>
                 <el-input v-model="query.name" class="handle-input mr10" placeholder="用户名"></el-input>
-                <el-button icon="el-icon-search" type="primary" @click="handleSearch(query.role,query.name)">搜索</el-button>
+                <el-button icon="el-icon-search" type="primary" @click="handleSearch(query.role,query.name)">搜索
+                </el-button>
                 <el-button type="primary" @click="handleSearch(null,null)">清空</el-button>
             </div>
             <el-table
@@ -120,8 +121,8 @@ export default {
                 pageSize: 10
             },
             tableData: [],
-            tableData2:[],
-            tablevisible:[],
+            tableData2: [],
+            tablevisible: [],
             multipleSelection: [],
             delList: [],
             editVisible: false,
@@ -141,32 +142,31 @@ export default {
                 console.log(res);
                 this.tableData = res.list;
                 this.tableData2 = this.tableData;
-                for(let i = 0; i < this.query.pageSize; i++){
-                    this.tablevisible[i] = this.tableData2.slice(this.query.pageSize*i,this.query.pageSize*(i+1));
+                for (let i = 0; i < this.query.pageSize; i++) {
+                    this.tablevisible[i] = this.tableData2.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
                 }
                 this.pageTotal = this.tableData2.length;
             });
         },
         // 触发搜索按钮
-        handleSearch(role,name) {
-            if(role===null&&name===null){
+        handleSearch(role, name) {
+            if (role === null && name === null) {
                 this.query.role = '';
                 this.query.name = '';
                 this.getData();
-            }
-            else {
+            } else {
                 this.tableData2 = this.tableData;
                 let tableDataCopy = new Array();
                 let j = 0;
-                for(let i = 0; i < this.tableData2.length; i++){
-                    if((this.tableData2[i].name.search(name) !== -1)&&(this.tableData2[i].role.search(role) !== -1)){
-                        tableDataCopy[j]=this.tableData2[i];
+                for (let i = 0; i < this.tableData2.length; i++) {
+                    if ((this.tableData2[i].name.search(name) !== -1) && (this.tableData2[i].role.search(role) !== -1)) {
+                        tableDataCopy[j] = this.tableData2[i];
                         j++;
                     }
                 }
                 this.tableData2 = tableDataCopy;
-                for(let i = 0; i < this.query.pageSize; i++){
-                    this.tablevisible[i] = tableDataCopy.slice(this.query.pageSize*i,this.query.pageSize*(i+1));
+                for (let i = 0; i < this.query.pageSize; i++) {
+                    this.tablevisible[i] = tableDataCopy.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
                 }
                 this.query.pageIndex = 1;
                 this.pageTotal = this.tableData2.length;
@@ -182,8 +182,8 @@ export default {
                     this.$message.success('删除成功');
                     this.tableData.splice(index, 1);
                     this.tableData2 = this.tableData;
-                    for(let i = 0; i < this.query.pageSize; i++){
-                        this.tablevisible[i] = this.tableData2.slice(this.query.pageSize*i,this.query.pageSize*(i+1));
+                    for (let i = 0; i < this.query.pageSize; i++) {
+                        this.tablevisible[i] = this.tableData2.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
                     }
                     this.pageTotal = this.tableData2.length;
                 })

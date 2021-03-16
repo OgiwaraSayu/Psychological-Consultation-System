@@ -2,7 +2,7 @@
     <div id="time-line">
         <div v-for="item in items" :key="item.date" class="item">
             <div class="item-date">{{ item.date }}</div>
-            <div class="item-content" :style="item.content==='结束'?'color:red':'color:#91c2fc'">{{ item.content }}</div>
+            <div :style="item.content==='结束'?'color:red':'color:#91c2fc'" class="item-content">{{ item.content }}</div>
         </div>
     </div>
 </template>
