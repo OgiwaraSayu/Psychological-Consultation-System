@@ -6,7 +6,7 @@
             :collapse="collapse"
             background-color="#324157"
             text-color="#bfcbd9"
-            active-text-color="#20a0ff"
+            active-text-color="#9a0ff"
             unique-opened
             router
         >
@@ -259,7 +259,7 @@ export default {
             items: [
                 {
                     icon: 'el-icon-folder',
-                    index: '11',
+                    index: '1',
                     title: '预约管理',
                     subs: [
                         {
@@ -274,7 +274,7 @@ export default {
                 },
                 {
                     icon: 'el-icon-folder',
-                    index: '12',
+                    index: '2',
                     title: '咨询师管理',
                     subs: [
                         {
@@ -282,7 +282,7 @@ export default {
                             title: '用户管理',
                         },
                         {
-                            index: '12-2',
+                            index: '2-2',
                             title: '咨询师列表',
                             subs: [
                                 {
@@ -291,7 +291,7 @@ export default {
                                 }
                             ]
                         },{
-                            index: '12-3',
+                            index: '2-3',
                             title: '初访员列表',
                             subs: [
                                 {
@@ -304,15 +304,15 @@ export default {
                 },
                 {
                     icon: 'el-icon-folder',
-                    index: '13',
+                    index: '3',
                     title: '咨询管理',
                     subs: [
                         {
-                            index: '13-1',
+                            index: '3-1',
                             title: '咨询列表-初访列表',
                             subs: [
                                 {
-                                    index: '13-1-1',
+                                    index: '3-1-1',
                                     title: '咨询列表-心理咨询列表'
                                 }
                             ]
@@ -326,7 +326,7 @@ export default {
                 },
                 {
                     icon: 'el-icon-lx-warn',
-                    index: '7',
+                    index: '4',
                     title: '错误处理',
                     subs: [
                         {
@@ -344,7 +344,7 @@ export default {
                 //初访员
                 {
                     icon: 'el-icon-folder',
-                    index: '15',
+                    index: '5',
                     title: '初访管理',
                     subs: [
                         {
@@ -362,12 +362,12 @@ export default {
                 //心理助理
                 {
                     icon: 'el-icon-folder',
-                    index: '16',
+                    index: '6',
                     title: '咨询安排',
                 },
                 {
                     icon: 'el-icon-folder',
-                    index: '17',
+                    index: '7',
                     title: '预约时间表',
                 },
                 {
@@ -380,7 +380,7 @@ export default {
                 //学生
                 {
                     icon: 'el-icon-folder',
-                    index: '17',
+                    index: '8',
                     title: '初访预约',
                     subs: [
                         {
@@ -408,11 +408,11 @@ export default {
                 //咨询师
                 {
                     icon: 'el-icon-folder',
-                    index: '20',
+                    index: '9',
                     title: '咨询师',
                     subs: [
                         {
-                            index: '20-1',
+                            index: '9-1',
                             title: '咨询管理',
                             subs: [
                                 {
@@ -420,15 +420,15 @@ export default {
                                     title: '编辑咨询记录'
                                 },
                                 {
-                                    index: '20-1-2',
+                                    index: '9-1-2',
                                     title: '查看咨询结果-结案/脱落'
                                 },
                                 {
-                                    index: '20-1-3',
+                                    index: '9-1-3',
                                     title: '追加咨询时段'
                                 },
                                 {
-                                    index: '20-1-2',
+                                    index: '9-1-2',
                                     title: '咨询结案报告'
                                 },
                             ]

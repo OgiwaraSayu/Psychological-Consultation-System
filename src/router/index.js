@@ -112,7 +112,7 @@ export default new Router({
                     // 权限页面
                     path: '/permission',
                     component: () => import(/* webpackChunkName: "permission" */ '../view/pages/Permission.vue'),
-                    meta: { title: '权限测试', permission: true }
+                    meta: { title: '权限测试', permission: 'admin' }
                 },
                 {
                     path: '/404',
