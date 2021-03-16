@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <v-sidebar></v-sidebar>
+        <v-sidebar style="z-index: 2"></v-sidebar>
         <div :class="{'content-collapse':collapse}" class="content-box">
             <v-head></v-head>
             <!--            <v-tags></v-tags>-->

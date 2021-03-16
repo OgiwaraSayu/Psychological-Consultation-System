@@ -148,6 +148,12 @@ export default new Router({
             component: () => import('../view/pages/Questionnaire'),
             meta: { title: '问卷' }
         },
+        //注册
+        {
+            path: '/register',
+            component: () => import('../view/pages/Register'),
+            meta: { title: '注册' }
+        },
         //专家页面
         {
             path: '/professorpage',
