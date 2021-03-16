@@ -1,0 +1,102 @@
+{
+    "list": [{
+            "id": 112354,
+            "name": "张三",
+            "sex": "男",
+            "role": "咨询师，初访员",
+            "state": "值班中",
+            "date": "2019-11-1",
+            "thumb": "https://lin-xin.gitee.io/images/post/wms.png"
+        },
+        {
+            "id": 214214,
+            "name": "李四",
+            "sex": "女",
+            "role": "咨询师",
+            "state": "值班中",
+            "date": "2019-10-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/node3.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 123243,
+            "name": "王五",
+            "sex": "女",
+            "role": "初访员",
+            "state": "未值班",
+            "date": "2019-11-11",
+            "thumb": "https://lin-xin.gitee.io/images/post/parcel.png"
+        },
+        {
+            "id": 442132,
+            "name": "赵六",
+            "sex": "女",
+            "role": "咨询师",
+            "state": "值班中",
+            "date": "2019-10-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png"
+        },
+        {
+            "id": 442132,
+            "name": "赵六",
+            "sex": "女",
+            "role": "咨询师",
+            "state": "值班中",
+            "date": "2019-10-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png"
+        },
+        {
+            "id": 442132,
+            "name": "赵六",
+            "sex": "女",
+            "role": "咨询师",
+            "state": "值班中",
+            "date": "2019-10-20",
+            "thumb": "https://lin-xin.gitee.io/images/post/notice.png"
+        }
+    ]
+}

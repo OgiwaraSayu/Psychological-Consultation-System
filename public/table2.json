@@ -1,0 +1,136 @@
+{
+  "list": [
+    {
+      "number":1,
+      "schoolnumber":21821313,
+      "name": "张三",
+      "sex": "男",
+      "emergencydegree": "非常紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "软件学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":2,
+      "schoolnumber":21821313,
+      "name": "李四",
+      "sex": "男",
+      "emergencydegree": "紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "生物医学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":3,
+      "schoolnumber":21821313,
+      "name": "李四",
+      "sex": "男",
+      "emergencydegree": "紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "生物医学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":4,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "不紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":5,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":6,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "非常紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":7,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "不紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":8,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "非常紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":9,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "不紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":10,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    },
+    {
+      "number":11,
+      "schoolnumber":21821313,
+      "name": "王五",
+      "sex": "男",
+      "emergencydegree": "非常紧急",
+      "score": "100",
+      "diseasetype": "抑郁",
+      "college": "电气学院",
+      "telephone": "11441241",
+      "submitdate": "2012-1-1"
+    }
+  ]
+}
