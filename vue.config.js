@@ -1,8 +1,8 @@
 module.exports = {
-    baseUrl: './',
+    publicPath: './',
     assetsDir: 'static',
     productionSourceMap: false,
-    dev: {
+    devServer: {
         proxy: {
             '/api':{
                 // target:'http://jsonplaceholder.typicode.com',
