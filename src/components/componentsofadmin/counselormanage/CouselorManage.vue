@@ -21,7 +21,7 @@
                     <el-option key="2" label="咨询师" value="咨询师"></el-option>
                 </el-select>
                 <el-input v-model="query.name" class="handle-input mr10" placeholder="用户名"></el-input>
-                <el-button icon="el-icon-search" type="primary" @click="handleSearch(query.role,query.name)">搜索
+                <el-button icon="el-icon-search" type="primary" @click="handleSearch()">搜索
                 </el-button>
                 <el-button type="primary" @click="handleSearch(null,null)">清空</el-button>
             </div>
@@ -148,6 +148,13 @@ export default {
         }
         console.log(this.tablevisible[0]);
       },
+        handleSearch(){
+          this.$axios({
+              url:this.Host +'/teacherinfo/teacherinfoget',
+              method: 'POST',
+              data: localStorage.getItem('ms_username')
+          })
+        },
       // 触发搜索按钮
       // handleSearch(role, name) {
       //     if (role === null && name === null) {
