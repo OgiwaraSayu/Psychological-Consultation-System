@@ -26,47 +26,47 @@
                 <el-button type="primary" @click="handleSearch(null,null)">清空</el-button>
             </div>
             <el-table
-                ref="multipleTable"
-                :data="tablevisible[this.query.pageIndex-1]"
+                ref='multipleTable'
+                :data='tablevisible[this.query.pageIndex - 1]'
                 border
-                class="table"
-                header-cell-class-name="table-header"
-                @selection-change="handleSelectionChange"
+                class='table'
+                header-cell-class-name='table-header'
+                @selection-change='handleSelectionChange'
             >
-                <el-table-column align="center" type="selection" width="55"></el-table-column>
-                <el-table-column align="center" label="工号" prop="id" width="150"></el-table-column>
-                <el-table-column label="用户名" prop="name"></el-table-column>
-                <el-table-column label="性别">
-                    <template slot-scope="scope">{{ scope.row.sex }}</template>
-                </el-table-column>
-                <el-table-column align="center" label="头像(查看大图)">
-                    <template slot-scope="scope">
-                        <el-image
-                            :preview-src-list="[scope.row.thumb]"
-                            :src="scope.row.thumb"
-                            class="table-td-thumb"
-                        ></el-image>
-                    </template>
-                </el-table-column>
-                <el-table-column label="角色" prop="role"></el-table-column>
-                <el-table-column align="center" label="状态">
-                    <template slot-scope="scope">
-                        <el-tag
-                            :type="scope.row.state==='值班中'?'success':(scope.row.state==='未值班'?'danger':'')"
-                        >{{ scope.row.state }}
-                        </el-tag>
-                    </template>
-                </el-table-column>
+              <el-table-column align='center' type='selection' width='55'></el-table-column>
+              <el-table-column align='center' label='工号' prop='usernum' width='150'></el-table-column>
+              <el-table-column label='用户名' prop='username'></el-table-column>
+              <!--                <el-table-column label="性别">-->
+              <!--&lt;!&ndash;                    <template slot-scope="scope">{{ scope.row.sex }}</template>&ndash;&gt;-->
+              <!--                </el-table-column>-->
+              <!--                <el-table-column align="center" label="头像(查看大图)">-->
+              <!--                    <template slot-scope="scope">-->
+              <!--                        <el-image-->
+              <!--                            :preview-src-list="[scope.row.thumb]"-->
+              <!--                            :src="scope.row.thumb"-->
+              <!--                            class="table-td-thumb"-->
+              <!--                        ></el-image>-->
+              <!--                    </template>-->
+              <!--                </el-table-column>-->
+              <el-table-column label='角色' prop='roleid'></el-table-column>
+              <!--                <el-table-column align="center" label="状态">-->
+              <!--                    <template slot-scope="scope">-->
+              <!--                        <el-tag-->
+              <!--                            :type="scope.row.state==='值班中'?'success':(scope.row.state==='未值班'?'danger':'')"-->
+              <!--                        >{{ scope.row.state }}-->
+              <!--                        </el-tag>-->
+              <!--                    </template>-->
+              <!--                </el-table-column>-->
 
-                <el-table-column label="注册时间" prop="date"></el-table-column>
-                <el-table-column align="center" label="操作" width="180">
-                    <template slot-scope="scope">
-                        <el-button
-                            icon="el-icon-edit"
-                            type="text"
-                            @click="handleEdit(scope.$index, scope.row)"
-                        >编辑
-                        </el-button>
+              <!--                <el-table-column label="注册时间" prop="date"></el-table-column>-->
+              <el-table-column align='center' label='操作' width='180'>
+                <template slot-scope='scope'>
+                  <el-button
+                      icon='el-icon-edit'
+                      type='text'
+                      @click='handleEdit(scope.$index, scope.row)'
+                  >编辑
+                  </el-button>
                         <el-button
                             class="red"
                             icon="el-icon-delete"
@@ -80,8 +80,8 @@
             <div class="pagination">
                 <el-pagination
                     :current-page="query.pageIndex"
-                    :page-size="query.pageSize"
-                    :total="pageTotal"
+                    :page-size='query.pageSize'
+                    :total='tableData.length'
                     background
                     layout="total, prev, pager, next"
                     @current-change="handlePageChange"
@@ -93,10 +93,10 @@
         <el-dialog :visible.sync="editVisible" title="编辑" width="30%">
             <el-form ref="form" :model="form" label-width="70px">
                 <el-form-item label="用户名">
-                    <el-input v-model="form.name"></el-input>
+                  <el-input v-model='form.username'></el-input>
                 </el-form-item>
                 <el-form-item label="角色">
-                    <el-input v-model="form.role"></el-input>
+                  <el-input v-model='form.roleid'></el-input>
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
@@ -121,7 +121,6 @@ export default {
                 pageSize: 10
             },
             tableData: [],
-            tableData2: [],
             tablevisible: [],
             multipleSelection: [],
             delList: [],
@@ -133,59 +132,58 @@ export default {
         };
     },
     created() {
+      // this.getData();
+      var url = this.Host + '/teacherinfo/teacherinfoget';
+      this.$axios.get(url).then(res => {
+        console.log(res.data);
+        this.tableData = res.data;
         this.getData();
+      });
     },
     methods: {
-        // 获取 easy-mock 的模拟数据
-        getData() {
-            fetchData(this.query).then(res => {
-                console.log(res);
-                this.tableData = res.list;
-                this.tableData2 = this.tableData;
-                for (let i = 0; i < this.query.pageSize; i++) {
-                    this.tablevisible[i] = this.tableData2.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
-                }
-                this.pageTotal = this.tableData2.length;
-            });
-        },
-        // 触发搜索按钮
-        handleSearch(role, name) {
-            if (role === null && name === null) {
-                this.query.role = '';
-                this.query.name = '';
-                this.getData();
-            } else {
-                this.tableData2 = this.tableData;
-                let tableDataCopy = new Array();
-                let j = 0;
-                for (let i = 0; i < this.tableData2.length; i++) {
-                    if ((this.tableData2[i].name.search(name) !== -1) && (this.tableData2[i].role.search(role) !== -1)) {
-                        tableDataCopy[j] = this.tableData2[i];
-                        j++;
+      getData() {
+        console.log(this.tableData);
+        for (let i = 0; i < this.query.pageSize; i++) {
+          this.tablevisible[i] = this.tableData.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
+        }
+        console.log(this.tablevisible[0]);
+      },
+      // 触发搜索按钮
+      // handleSearch(role, name) {
+      //     if (role === null && name === null) {
+      //         this.query.role = '';
+      //         this.query.name = '';
+      //         this.getData();
+      //     } else {
+      //         let tableDataCopy = new Array();
+      //         let j = 0;
+      //         for (let i = 0; i < this.tableData.length; i++) {
+      //             if ((this.tableData[i].name.search(name) !== -1) && (this.tableData[i].role.search(role) !== -1)) {
+      //                 tableDataCopy[j] = this.tableData[i];
+      //                 j++;
+      //             }
+      //         }
+      //         this.tableData = tableDataCopy;
+      //         for (let i = 0; i < this.query.pageSize; i++) {
+      //             this.tableData[i] = tableDataCopy.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
+      //         }
+      //         this.query.pageIndex = 1;
+      //         this.pageTotal = this.tableData.length;
+      //     }
+      // },
+      // 删除操作
+      handleDelete(index, row) {
+        // 二次确认删除
+        this.$confirm('确定要删除吗？', '提示', {
+          type: 'warning'
+        })
+            .then(() => {
+              this.$message.success('删除成功');
+              this.tableData.splice(index, 1);
+              for (let i = 0; i < this.query.pageSize; i++) {
+                this.tableData[i] = this.tableData.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
                     }
-                }
-                this.tableData2 = tableDataCopy;
-                for (let i = 0; i < this.query.pageSize; i++) {
-                    this.tablevisible[i] = tableDataCopy.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
-                }
-                this.query.pageIndex = 1;
-                this.pageTotal = this.tableData2.length;
-            }
-        },
-        // 删除操作
-        handleDelete(index, row) {
-            // 二次确认删除
-            this.$confirm('确定要删除吗？', '提示', {
-                type: 'warning'
-            })
-                .then(() => {
-                    this.$message.success('删除成功');
-                    this.tableData.splice(index, 1);
-                    this.tableData2 = this.tableData;
-                    for (let i = 0; i < this.query.pageSize; i++) {
-                        this.tablevisible[i] = this.tableData2.slice(this.query.pageSize * i, this.query.pageSize * (i + 1));
-                    }
-                    this.pageTotal = this.tableData2.length;
+              this.pageTotal = this.tableData.length;
                 })
                 .catch(() => {
                 });
@@ -212,18 +210,18 @@ export default {
         },
         // 保存编辑
         saveEdit() {
-            this.editVisible = false;
-            this.$message.success(`修改第 ${this.idx + 1} 行成功`);
-            this.$set(this.tableData, this.idx, this.form);
-            this.$set(this.tableData2, this.idx, this.form);
-            this.$set(this.tablevisible, this.idx, this.form);
+          this.editVisible = false;
+          this.$message.success(`修改第 ${this.idx + 1} 行成功`);
+          this.$set(this.tableData, this.idx, this.form);
+          this.$set(this.tableData, this.idx, this.form);
+          this.$set(this.tableData, this.idx, this.form);
         },
-        // 分页导航
-        handlePageChange(val) {
-            this.$set(this.query, 'pageIndex', val);
-            this.getData();
-        }
-    }
+      // 分页导航
+      handlePageChange(val) {
+        this.$set(this.query, 'pageIndex', val);
+      }
+    },
+
 };
 </script>
 
