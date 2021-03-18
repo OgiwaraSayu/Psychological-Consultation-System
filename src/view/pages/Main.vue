@@ -1,5 +1,6 @@
 <template>
     <div style="overflow-x: hidden">
+        <h1>{{msg}}</h1>
         <div v-if="loginvisible" class="login-div">
             <el-link href="/login">登陆</el-link>
             &nbsp;&nbsp;&nbsp;&nbsp;
@@ -215,6 +216,7 @@
 export default {
     data() {
         return {
+            msg:'显示',
             loginvisible: false,
             uname: localStorage.getItem('ms_username'),
             imagesBox: [{ id: 0, idView: require('../../assets/1.jpg') },
@@ -332,6 +334,13 @@ export default {
             localStorage.removeItem('ms_username');
             this.$router.go(0);
         }
+    },
+    created() {
+        var url = this.Host + '/teacherinfo/teacherinfoget'
+        this.$axios.get(url).then(res =>{
+            console.log(res);
+            this.msg = res.data
+        })
     },
     mounted() {
         this.$nextTick(() => {

@@ -10,6 +10,12 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 import './assets/css/icon.css';
 import './components/common/directives';
 import 'babel-polyfill';
+import axios from 'axios';
+Vue.prototype.$axios = axios; //配置axios
+
+Vue.prototype.Host = "api"; //配置跨域
+
+Vue.config.productionTip = false; //阻止启动生产消息，减少开销
 
 Vue.config.productionTip = false;
 Vue.use(VueCookie);

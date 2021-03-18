@@ -48,6 +48,14 @@ export default {
                 if (valid) {
                     this.$message.success('登录成功');
                     localStorage.setItem('ms_username', this.param.username);
+                    let formData = new FormData();
+                    formData.append('usernum', this.param.username);
+                    formData.append('password', this.param.password);
+                    this.$axios({
+                        url:this.Host + '/login',
+                        method: 'POST',
+                        data: formData
+                    })
                     this.$router.push('/');
                 } else {
                     this.$message.error('请输入账号和密码');
@@ -55,6 +63,26 @@ export default {
                     return false;
                 }
             });
+            // this.$axios({
+            //     url: '/login',
+            //     method: 'POST',
+            //     data: this.param
+            // }).then(response => {
+            //     if (response.data['finish'] === 'wrong password') {
+            //         this.$message.error(response.data['finish']);
+            //     } else {
+            //         this.$message.success(response.data['finish']);
+            //         this.$cookie.set('LoginType', response.data['loginType']);
+            //         this.$cookie.set('TeamID', response.data['teamID']);
+            //         this.$cookie.set('UserName', response.data['userName']);
+            //         this.$cookie.set('TeamName', response.data['teamName']);
+            //         this.$cookie.set('RoleName', response.data['roleName']);
+            //         this.$cookie.set('TeamName', response.data['teamName']);
+            //         this.$router.push('/');
+            //     }
+            // }).catch(err => {
+            //     console.log(err);
+            // });
         }
     }
 };
