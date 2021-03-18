@@ -18,117 +18,76 @@
                         </transition-group>
                     </draggable>
                 </div>
-                <div style="width: 100%">
-                    <el-row>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">8~9点</div>
-                                <draggable v-model="classroomarrange.period1" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="8~9点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period1" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">9~10点</div>
-                                <draggable v-model="classroomarrange.period2" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="9~10点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period2" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">10~11点</div>
-                                <draggable v-model="classroomarrange.period3" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="10~11点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period3" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">11~12点</div>
-                                <draggable v-model="classroomarrange.period4" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="11~12点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period4" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                    </el-row>
-                    <el-row style="width: 100%">
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">14~15点</div>
-                                <draggable v-model="classroomarrange.period5" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="14~15点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period5" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">15~16点</div>
-                                <draggable v-model="classroomarrange.period6" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="15~16点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period6" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">16~17点</div>
-                                <draggable v-model="classroomarrange.period7" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="16~17点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period7" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                        <el-col :span="6">
-                            <div class="drag-box-item">
-                                <div class="item-title">17~18点</div>
-                                <draggable v-model="classroomarrange.period8" :options="dragOptions"
-                                           @remove="removeHandle">
-                                    <transition-group id="17~18点" class="item-ul" tag="div">
-                                        <div v-for="item in classroomarrange.period8" :key="item.id" class="drag-list">
-                                            {{ item.content }}
-                                        </div>
-                                    </transition-group>
-                                </draggable>
-                            </div>
-                        </el-col>
-                    </el-row>
-                </div>
+                <table border="1">
+                    <tr>
+                        <th>
 
+                        </th>
+                        <th v-for="item in table" :key="item.id">
+                            {{item.workDay}}
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>8~10点</td>
+                        <td v-for="(i,index) in timeArrange.eightToTen" :key="i.id">
+                            <div class="drag-box-item">
+                                <draggable v-model="timeArrange.eightToTen[index]" :options="dragOptions"
+                                           @remove="removeHandle">
+                                    <transition-group id="8~10点" class="item-ul" tag="div">
+                                        <div v-for="item in timeArrange.eightToTen[index]" :key="item.id" class="drag-list">
+                                            {{ item.content }}
+                                        </div>
+                                    </transition-group>
+                                </draggable>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10~12点</td>
+                        <td v-for="(i,index) in timeArrange.tenToTwelve" :key="i.id">
+                            <div class="drag-box-item">
+                                <draggable v-model="timeArrange.tenToTwelve[index]" :options="dragOptions"
+                                           @remove="removeHandle">
+                                    <transition-group id="10~12点" class="item-ul" tag="div">
+                                        <div v-for="item in timeArrange.tenToTwelve[index]" :key="item.id" class="drag-list">
+                                            {{ item.content }}
+                                        </div>
+                                    </transition-group>
+                                </draggable>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>14~16点</td>
+                        <td v-for="(i,index) in timeArrange.fourteenToSixteen" :key="i.id">
+                            <div class="drag-box-item">
+                                <draggable v-model="timeArrange.fourteenToSixteen[index]" :options="dragOptions"
+                                           @remove="removeHandle">
+                                    <transition-group id="14~16点" class="item-ul" tag="div">
+                                        <div v-for="item in timeArrange.fourteenToSixteen[index]" :key="item.id" class="drag-list">
+                                            {{ item.content }}
+                                        </div>
+                                    </transition-group>
+                                </draggable>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>16~18点</td>
+                        <td v-for="(i,index) in timeArrange.sixteenToEighteen" :key="i.id">
+                            <div class="drag-box-item">
+                                <draggable v-model="timeArrange.sixteenToEighteen[index]" :options="dragOptions"
+                                           @remove="removeHandle">
+                                    <transition-group id="16~18点" class="item-ul" tag="div">
+                                        <div v-for="item in timeArrange.sixteenToEighteen[index]" :key="item.id" class="drag-list">
+                                            {{ item.content }}
+                                        </div>
+                                    </transition-group>
+                                </draggable>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
@@ -141,6 +100,16 @@ export default {
     name: 'scheduletime',
     data() {
         return {
+            classroom:{
+
+            },
+            table: [
+                {id:1,workDay: '星期一'},
+                {id:2,workDay: '星期二'},
+                {id:3,workDay: '星期三'},
+                {id:4,workDay: '星期四'},
+                {id:5,workDay: '星期五'},
+            ],
             dragOptions: {
                 animation: 120,
                 scroll: true,
@@ -199,16 +168,48 @@ export default {
                     content: '汪老师'
                 }
             ],
-            classroomarrange: {
-                period1: [],
-                period2: [],
-                period3: [],
-                period4: [],
-                period5: [],
-                period6: [],
-                period7: [],
-                period8: []
-            }
+            timeArrange:
+                {
+                    eightToTen:{
+                        Monday:[],
+                        Tuesday:[],
+                        Wednesday:[],
+                        Thursday:[],
+                        Friday:[]
+                    },
+                    tenToTwelve:{
+                        Monday:[],
+                        Tuesday:[],
+                        Wednesday:[],
+                        Thursday:[],
+                        Friday:[]
+                    },
+                    fourteenToSixteen:{
+                        Monday:[],
+                        Tuesday:[],
+                        Wednesday:[],
+                        Thursday:[],
+                        Friday:[]
+                    },
+                    sixteenToEighteen:{
+                        Monday:[],
+                        Tuesday:[],
+                        Wednesday:[],
+                        Thursday:[],
+                        Friday:[]
+                    }
+                },
+            timeArrange1:this.timeArrange,
+            timeArrange2:this.timeArrange,
+            timeArrange3:this.timeArrange,
+            timeArrange4:this.timeArrange,
+
+            timeArrangeEachClass:[
+                {classroom1:this.timeArrange1},
+                {classroom2:this.timeArrange2},
+                {classroom3:this.timeArrange3},
+                {classroom4:this.timeArrange4},
+            ]
         };
     },
     components: {
@@ -233,10 +234,7 @@ export default {
 
 .drag-box-item {
     flex: 1;
-    height: 140px;
-    margin-bottom: 10px;
-    background-color: #eff1f5;
-    margin-right: 16px;
+    height: 100px;
     border-radius: 6px;
     border: 1px #e1e4e8 solid;
 }
@@ -287,5 +285,12 @@ export default {
     display: block;
     color: transparent;
     border-style: dashed
+}
+table{
+    width: 100%;
+    text-align: center;
+}
+td{
+    width: 50px;
 }
 </style>
