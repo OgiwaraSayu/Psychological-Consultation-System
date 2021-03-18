@@ -8,7 +8,7 @@
         <div class="logo">后台管理系统</div>
         <div class="header-right">
             <el-link :underline="false" href="/"
-                     style="position: absolute;font-size: medium;right: 18%;top: 30%;color: white">
+                     style="position: absolute;font-size: medium;right: 250px;top: 22px;color: white">
                 首页
             </el-link>
             <div class="header-user-con">
@@ -146,7 +146,6 @@ export default {
     font-size: 24px;
 }
 
-.btn-bell,
 .btn-fullscreen {
     position: relative;
     width: 30px;

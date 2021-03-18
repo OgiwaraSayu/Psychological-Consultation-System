@@ -357,8 +357,8 @@ export default {
     position: relative;
     overflow: hidden;
     list-style: none;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     width: 3000px;
 }
 
