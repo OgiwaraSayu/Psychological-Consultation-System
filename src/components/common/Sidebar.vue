@@ -18,7 +18,6 @@
                 </span>
                 </el-button>
             </div>
-            <i class="el-icon-setting"></i>
             <template v-for="i in public">
                 <template>
                     <el-menu-item :key="i.index" :index="i.index">

@@ -338,7 +338,6 @@ export default {
     created() {
         var url = this.Host + '/teacherinfo/teacherinfoget'
         this.$axios.get(url).then(res =>{
-            console.log(res);
             this.msg = res.data
         })
     },
