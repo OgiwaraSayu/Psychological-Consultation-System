@@ -55,7 +55,7 @@
                         <div>
                             咨询情况：{{card.consultation}}
                         </div>
-                        <div>
+                        <div style="overflow: hidden;text-overflow:ellipsis">
                             未来建议：{{card.advice}}
                         </div>
                     </div>
