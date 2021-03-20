@@ -94,7 +94,7 @@ export default new Router({
 
 
                 //咨询师
-                //编辑咨询记录
+                //学生详情
                 {
                     path: '/editrecord',
                     component: () => import('../components/componentsofcounselors/counselmanage/EditRecord'),
@@ -105,6 +105,26 @@ export default new Router({
                     path: '/editrecorddetails',
                     component: () => import('../components/componentsofcounselors/counselmanage/EditRecordDetails'),
                     meta: { title: '编辑咨询记录', permission: 'counselor' }
+                },
+                //编辑个人结案报告
+                {
+                    path: '/finalreport',
+                    component: () => import('../components/componentsofcounselors/counselmanage/FinalReport'),
+                    meta: { title: '个人结案报告', permission: 'counselor'}
+                },
+                //编辑个人结案报告
+                {
+                    path: '/browseresult',
+                    component: () => import('../components/componentsofcounselors/counselmanage/BrowseResult'),
+                    meta: { title: '查看咨询结果', permission: 'counselor'}
+                },
+
+                //心理助理
+                //咨询安排
+                {
+                    path: '/consultationarrange',
+                    component: () => import('../components/componentsofassistants/ConsultationArrange'),
+                    meta: { title: '咨询安排', permission: 'assistant' }
                 },
 
 

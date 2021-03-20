@@ -372,7 +372,7 @@ export default {
                 //心理助理
                 {
                     icon: 'el-icon-folder',
-                    index: '6',
+                    index: 'consultationarrange',
                     title: '咨询安排'
                 },
                 {
@@ -430,7 +430,7 @@ export default {
                                     title: '编辑咨询记录'
                                 },
                                 {
-                                    index: '9-1-2',
+                                    index: 'browseresult',
                                     title: '查看咨询结果-结案/脱落'
                                 },
                                 {
@@ -438,7 +438,7 @@ export default {
                                     title: '追加咨询时段'
                                 },
                                 {
-                                    index: '9-1-2',
+                                    index: 'finalreport',
                                     title: '咨询结案报告'
                                 }
                             ]

@@ -261,6 +261,7 @@ export default {
             lng: 0,
             lat: 0,
             loaded: false,
+            autoplayValue:0,
             plugin: [{
                 enableHighAccuracy: true,//是否使用高精度定位，默认:true
                 timeout: 100,          //超过10秒后停止定位，默认：无穷大
@@ -341,13 +342,16 @@ export default {
     // },
     mounted() {
         this.$nextTick(() => {
-            setInterval(this.autoplay, 10);
+            this.autoplayValue = setInterval(this.autoplay, 10);
         });
         if (this.uname !== null) {
             this.loginvisible = false;
         } else {
             this.loginvisible = true;
         }
+    },
+    beforeDestroy() {
+        clearInterval(this.autoplayValue);
     }
 };
 </script>

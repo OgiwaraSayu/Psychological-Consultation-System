@@ -8,7 +8,7 @@
         </div>
         <div class="container">
             <div class="drag-box">
-                <div class="drag-box-item" style="height: 500px;max-width: 19%;min-width: 19%">
+                <div class="drag-box-item" style="max-width: 19%;height: 100%;min-width: 19%">
                     <div class="item-title">值班老师</div>
                     <draggable v-model="teacher" :options="dragOptions" @remove="removeHandle">
                         <transition-group id="teacher" class="item-ul" tag="div">
@@ -234,7 +234,7 @@ export default {
 
 .drag-box-item {
     flex: 1;
-    height: 100px;
+    height: 100%;
     border-radius: 6px;
     border: 1px #e1e4e8 solid;
 }
@@ -249,7 +249,7 @@ export default {
 
 .item-ul {
     padding: 0 8px 8px;
-    height: 500px;
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -291,6 +291,7 @@ table{
     text-align: center;
 }
 td{
-    width: 50px;
+    width: 60px;
+    height: 60px;
 }
 </style>

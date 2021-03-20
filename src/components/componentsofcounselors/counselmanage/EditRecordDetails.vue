@@ -55,9 +55,11 @@
                         <div>
                             咨询情况：{{card.consultation}}
                         </div>
-                        <div style="overflow: hidden;text-overflow:ellipsis">
-                            未来建议：{{card.advice}}
-                        </div>
+                        <el-tooltip class="item" effect="light" :content=card.advice placement="bottom">
+                            <div style="overflow: hidden;text-overflow:ellipsis">
+                                未来建议：{{card.advice}}
+                            </div>
+                        </el-tooltip>
                     </div>
                 </el-card>
             </el-col>
@@ -100,15 +102,17 @@ export default {
         addCard(a){
             let da = new Date().getTime();
             this.card_arr.push({id:this.card_arr.length+1,ifarrive: a.ifarrive,consultation: a.consultation,advice: a.advice});
-            if(a.ifarrive !== "脱落" && a.ifarrive !== "结案"){
+            if(a.ifarrive === "脱落" || a.ifarrive === "结案"){
+                this.$refs.timeline.items.push({
+                    date: new Date(da).toLocaleString(),
+                    content: a.ifarrive
+                },);
+                this.counseltimes = this.card_arr.length;
+            }
+            else {
                 this.$refs.timeline.items.push({
                     date: new Date(da).toLocaleString(),
                     content: '第'+this.card_arr.length+'次咨询'
-                },);
-            }else {
-                this.$refs.timeline.items.push({
-                    date: new Date(da).toLocaleString(),
-                    content: '结束'
                 },);
             }
         }
