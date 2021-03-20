@@ -82,6 +82,19 @@
                     prop="submitdate"
                     width="120">
                 </el-table-column>
+                <el-table-column
+                    fixed="right"
+                    label="操作"
+                    width="120">
+                    <template slot-scope="scope">
+                        <el-button
+                            @click="pagejumpto(scope.row.name)"
+                            type="text"
+                            size="small">
+                            咨询时间安排
+                        </el-button>
+                    </template>
+                </el-table-column>
             </el-table>
             <div class="pagination">
                 <el-pagination
@@ -98,7 +111,7 @@
 </template>
 
 <script>
-import { fetchData2 } from '../../../api';
+import { fetchData2 } from '../../api';
 
 export default {
     data() {
@@ -165,6 +178,9 @@ export default {
             this.$set(this.query, 'pageIndex', val);
             this.getData();
         },
+        pagejumpto() {
+            this.$router.push('/consultationarrange');
+        }
     },
     created() {
         this.getData();

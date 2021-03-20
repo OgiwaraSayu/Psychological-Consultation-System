@@ -63,7 +63,7 @@ export default new Router({
                 {
                     path: '/firstvisitresult',
                     component: () => import('../components/componentsofvisitor/firstvisitmanage/FirstVisitResult'),
-                    meta: { title: '录入初访信息', permission: 'visitor,assistant' }
+                    meta: { title: '录入初访信息', permission: 'visitor' }
                 },
 
                 //学生
@@ -124,6 +124,11 @@ export default new Router({
                 {
                     path: '/consultationarrange',
                     component: () => import('../components/componentsofassistants/ConsultationArrange'),
+                    meta: { title: '咨询安排', permission: 'assistant' }
+                },
+                {
+                    path: '/firstvisitresultcopy',
+                    component: () => import('../components/componentsofassistants/FirstVisitResultCopy'),
                     meta: { title: '咨询安排', permission: 'assistant' }
                 },
 

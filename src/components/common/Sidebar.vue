@@ -382,7 +382,7 @@ export default {
                 },
                 {
                     icon: 'el-icon-folder',
-                    index: 'firstvisitresult',
+                    index: 'firstvisitresultcopy',
                     title: '查看初访结果'
                 }
             ],
