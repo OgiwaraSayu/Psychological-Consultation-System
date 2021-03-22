@@ -75,7 +75,7 @@
                 <el-table-column
                     fixed="right"
                     label="操作"
-                    width="120">
+                    width="150">
                     <template slot-scope="scope">
                         <el-button
                             size="small"
@@ -178,6 +178,7 @@ export default {
     },
     created() {
         this.getData();
+
     }
 };
 </script>

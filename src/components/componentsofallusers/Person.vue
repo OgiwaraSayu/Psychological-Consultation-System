@@ -144,6 +144,7 @@ export default {
     },
     created() {
         this.cropImg = this.defaultSrc;
+
     }
 };
 

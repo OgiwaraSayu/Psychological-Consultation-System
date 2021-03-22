@@ -36,9 +36,10 @@
               <el-table-column align='center' type='selection' width='55'></el-table-column>
               <el-table-column align='center' label='工号' prop='usernum' width='150'></el-table-column>
               <el-table-column label='用户名' prop='username'></el-table-column>
-              <!--                <el-table-column label="性别">-->
-              <!--&lt;!&ndash;                    <template slot-scope="scope">{{ scope.row.sex }}</template>&ndash;&gt;-->
-              <!--                </el-table-column>-->
+              <el-table-column label="性别">
+                <template slot-scope="scope">{{ scope.row.sex }}</template>
+              </el-table-column>
+
               <!--                <el-table-column align="center" label="头像(查看大图)">-->
               <!--                    <template slot-scope="scope">-->
               <!--                        <el-image-->
@@ -49,16 +50,16 @@
               <!--                    </template>-->
               <!--                </el-table-column>-->
               <el-table-column label='角色' prop='roleid'></el-table-column>
-              <!--                <el-table-column align="center" label="状态">-->
-              <!--                    <template slot-scope="scope">-->
-              <!--                        <el-tag-->
-              <!--                            :type="scope.row.state==='值班中'?'success':(scope.row.state==='未值班'?'danger':'')"-->
-              <!--                        >{{ scope.row.state }}-->
-              <!--                        </el-tag>-->
-              <!--                    </template>-->
-              <!--                </el-table-column>-->
+<!--              <el-table-column align="center" label="状态">-->
+<!--                  <template slot-scope="scope">-->
+<!--                      <el-tag-->
+<!--                          :type="scope.row.workCondition==='值班中'?'success':(scope.row.workCondition==='未值班'?'danger':'')"-->
+<!--                      >{{ scope.row.workCondition }}-->
+<!--                      </el-tag>-->
+<!--                  </template>-->
+<!--              </el-table-column>-->
 
-              <!--                <el-table-column label="注册时间" prop="date"></el-table-column>-->
+              <el-table-column label="手机" prop="tel"></el-table-column>
               <el-table-column align='center' label='操作' width='180'>
                 <template slot-scope='scope'>
                   <el-button

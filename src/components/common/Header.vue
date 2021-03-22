@@ -146,6 +146,7 @@ export default {
     font-size: 24px;
 }
 
+.btn-bell,
 .btn-fullscreen {
     position: relative;
     width: 30px;

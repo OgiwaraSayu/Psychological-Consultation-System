@@ -48,13 +48,13 @@ export default {
                 if (valid) {
                     this.$message.success('登录成功');
                     localStorage.setItem('ms_username', this.param.username);
-                    let formData = new FormData();
-                    formData.append('usernum', this.param.username);
-                    formData.append('password', this.param.password);
+                    // let formData = new FormData();
+                    // formData.append('username', this.param.username);
+                    // formData.append('password', this.param.password);
                     this.$axios({
                         url:this.Host + '/login',
                         method: 'POST',
-                        data: formData
+                        data: this.param
                     })
                     this.$router.push('/');
                 } else {

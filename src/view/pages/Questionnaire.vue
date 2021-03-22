@@ -21,7 +21,7 @@
                                 <el-col :span="8">
                                     姓名
                                     <br>
-                                    <el-input v-model="questionrecord.name"></el-input>
+                                    <el-input v-model="questionrecord.studentname"></el-input>
                                 </el-col>
                                 <el-col :span="8">
                                     性别
@@ -231,7 +231,7 @@
                         <div style="position: relative;top: 190px">
                             自述紧急程度
                             <br>
-                            <el-select v-model="emergencydegree">
+                            <el-select v-model="questionrecord.emergencydegree">
                                 <el-option value="非常紧急">非常紧急</el-option>
                                 <el-option value="一般紧急">一般紧急</el-option>
                                 <el-option value="不紧急">不紧急</el-option>
@@ -244,9 +244,9 @@
                         <div style="position: relative;top: 235px">
                             咨询经历
                             <br>
-                            <el-radio v-model="consultativehistory" label="无">无</el-radio>
-                            <el-radio v-model="consultativehistory" label="本中心">本中心</el-radio>
-                            <el-radio v-model="consultativehistory" label="其他">其他</el-radio>
+                            <el-radio v-model="questionrecord.consultativehistory" label="无">无</el-radio>
+                            <el-radio v-model="questionrecord.consultativehistory" label="本中心">本中心</el-radio>
+                            <el-radio v-model="questionrecord.consultativehistory" label="其他">其他</el-radio>
                         </div>
                         <!--                    <div>-->
                         <!--                        <span class="titlestyle" style="position: relative;top:280px;"><span class="iconstyle">|</span>&nbsp;&nbsp;选择初访时间</span>-->
@@ -265,7 +265,7 @@
                         <!--                        <el-checkbox v-for="period in timeperiod" v-model="period.checked"-->
                         <!--                                     :label="period.time" @change="value => testclick(value,period.id)"></el-checkbox>-->
                         <!--                    </div>-->
-                        <el-button style="position: absolute;bottom: 30px" type="primary">提交</el-button>
+                        <el-button style="position: absolute;bottom: 30px" type="primary" @click='submit'>提交</el-button>
                     </el-form>
                 </el-card>
             </div>
@@ -281,7 +281,7 @@ export default {
         return {
             uname: localStorage.getItem('ms_username'),
             questionrecord: {
-                name: '',
+                studentname: '',
                 sex: '',
                 age: '',
                 telephone: '',
@@ -304,8 +304,11 @@ export default {
                 cureresult: '',//诊断结果
                 medicinehistory: '', //药物治疗史
                 hospitalhistory: '',//住院史
-                firstvisitdate: ''//初访时间
+                firstvisitdate: '',//初访时间
                 // firstvisittimeperiod:[],//初访时间段
+                selfstatustestscore: 80,
+                emergencydegree: '',
+                consultativehistory: ''
             },
             selfstatus: [
                 '我最近会容易悲伤哭泣',
@@ -339,7 +342,6 @@ export default {
                 '我觉得我可能要疯掉了',
                 '我最近经常花销无度，无法自控'
             ],
-            selfstatustestscore: 80,
             score: scoreOptions,
             lifequality: [
                 { life: '身心健康', checked: [] },
@@ -347,14 +349,7 @@ export default {
                 { life: '人际关系(家庭或任何亲密关系)', checked: [] },
                 { life: '生活社交(工作、学校、朋友)', checked: [] }
             ],
-            // timeperiod: [
-            //     {id:1,time:'8~10点',checked:[]},
-            //     {id:2,time:'10~12点',checked:[]},
-            //     {id:3,time:'14~16点',checked:[]},
-            //     {id:4,time:'16~18点',checked:[]},
-            // ],
-            emergencydegree: '',
-            consultativehistory: ''
+
         };
     },
     methods: {
@@ -384,6 +379,16 @@ export default {
         logout() {
             localStorage.removeItem('ms_username');
             this.$router.go(0);
+        },
+        submit(){
+            // let formData = new FormData();
+            // formData.append('student', this.questionrecord);
+            // formData.append('reservation', this.selfstatustestscore);
+            this.$axios({
+                url:this.Host + '/student/apply',
+                method: 'POST',
+                data: this.questionrecord
+            })
         }
     }
 };
