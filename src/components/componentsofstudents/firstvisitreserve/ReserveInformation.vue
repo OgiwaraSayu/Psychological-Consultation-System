@@ -39,6 +39,7 @@
                     <div style="margin-top: 20px">
                         <span>3.初访完成后，心理助理会安排咨询师对您进行单独谈话，大约需要八周的时间对您进行治疗，期间提前解决问题也可以提前结案</span></div>
                     <div style="margin-top: 20px"><span>4.如果咨询完成您仍然感觉有些不适，可以申请延长咨询时间</span></div>
+                    <div style="margin-top: 20px"><span>5.咨询预约期间，如果您觉得时间不合适，可以在咨询一天前向系统申请撤销</span></div>
                 </el-card>
             </el-col>
         </el-row>

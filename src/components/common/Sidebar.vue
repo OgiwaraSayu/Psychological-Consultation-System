@@ -377,7 +377,7 @@ export default {
                 },
                 {
                     icon: 'el-icon-folder',
-                    index: '7',
+                    index: 'reserveschedule',
                     title: '预约时间表'
                 },
                 {

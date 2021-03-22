@@ -119,6 +119,7 @@ export default new Router({
                     meta: { title: '查看咨询结果', permission: 'counselor'}
                 },
 
+
                 //心理助理
                 //咨询安排
                 {
@@ -126,11 +127,19 @@ export default new Router({
                     component: () => import('../components/componentsofassistants/ConsultationArrange'),
                     meta: { title: '咨询安排', permission: 'assistant' }
                 },
+                //查看初访结果
                 {
                     path: '/firstvisitresultcopy',
                     component: () => import('../components/componentsofassistants/FirstVisitResultCopy'),
-                    meta: { title: '咨询安排', permission: 'assistant' }
+                    meta: { title: '查看初访结果', permission: 'assistant' }
                 },
+                //预约时间表
+                {
+                    path: '/reserveschedule',
+                    component: () => import('../components/componentsofassistants/ReserveSchedule'),
+                    meta: { title: '预约时间表', permission: 'assistant' }
+                },
+
 
 
                 {

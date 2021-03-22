@@ -178,8 +178,8 @@ export default {
             this.$set(this.query, 'pageIndex', val);
             this.getData();
         },
-        pagejumpto() {
-            this.$router.push('/consultationarrange');
+        pagejumpto(name) {
+            this.$router.push({path:'/reserveschedule',query:{'student':name}});
         }
     },
     created() {
