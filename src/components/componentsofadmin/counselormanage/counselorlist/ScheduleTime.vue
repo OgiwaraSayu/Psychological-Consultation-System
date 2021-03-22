@@ -96,7 +96,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <el-button type="primary" plain class="save-button" @click="testSave">保存</el-button>
+                        <el-button type="primary" plain class="save-button" @click="submit">保存</el-button>
                     </div>
                 </div>
             </div>
@@ -227,8 +227,21 @@ export default {
             this.$message.success(`将 ${event.item.innerText} 安排到 ${event.to.id} `);
             this.teacher = this.teacherCopy;
         },
-        testSave(){
-            console.log(this.timeArrange1)
+        submit(){
+            // let timeArrangeAll = {
+            //     timeArrange1: this.timeArrange1,
+            //     timeArrange2: this.timeArrange2,
+            //     timeArrange3: this.timeArrange3,
+            //     timeArrange4: this.timeArrange4,
+            // };
+            let formData = new FormData();
+            // formData.append('arr',this.timeArrange1);
+            formData.append('classroomID',1);
+            this.$axios({
+                url:this.Host + '/administrator/arrageduty',
+                method: 'POST',
+                data: formData
+            })
         },
         buttonChange(buttonId){
             console.log(buttonId)

@@ -18,7 +18,13 @@ export default new Router({
                 {
                     path: '/scheduletime',
                     component: () => import('../components/componentsofadmin/counselormanage/counselorlist/ScheduleTime'),
-                    meta: { title: '预约时间表', permission: 'admin' }
+                    meta: { title: '咨询师值班时间表', permission: 'admin' }
+                },
+                //预约时间表2
+                {
+                    path: '/scheduletimeVisitor',
+                    component: () => import('../components/componentsofadmin/counselormanage/visitorlist/ScheduleTime'),
+                    meta: { title: '初访员值班时间表', permission: 'admin' }
                 },
                 //咨询师管理
                 {

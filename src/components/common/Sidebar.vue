@@ -305,7 +305,7 @@ export default {
                             title: '初访员列表',
                             subs: [
                                 {
-                                    index: 'scheduletime',
+                                    index: 'scheduletimeVisitor',
                                     title: '配置初访时间'
                                 }
                             ]
